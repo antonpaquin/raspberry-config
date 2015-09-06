@@ -9,9 +9,8 @@ def index(req):
         return showBlock(req)
 
 def showPage(req):
-    with open('/var/www/Utils/HTML/torrents/add.html') as home_f:
-        home = home_f.read()
-    return home
+    #return torrent data -- name, progress, speed, ratio, size TODO
+    pass
 
 def showBlock(req):
     with open('/var/www/Utils/HTML/main/block.html') as block_f:

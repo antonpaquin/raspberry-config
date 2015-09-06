@@ -1,20 +1,19 @@
 #! /usr/bin/python3
-import os
 from mod_python import Cookie
 
 def index(req):
     cookies = Cookie.get_cookies(req)
-    if 'User' in cookies and cookies['User'] == 'Anton':
-        return showHome(req)
+    if cookise.has_key('User') and cookies['User'].value == 'Anton':
+        return showPage(req)
     else:
         return showBlock(req)
 
-def showHome(req):
-    with open('Utils/HTML/main/home.html') as home_f:
-        home = home_f
+def showPage(req):
+    with open('/var/www/Utils/HTML/main/home.html') as home_f:
+        home = home_f.read()
     return home
 
 def showBlock(req):
-    with open('Utils/HTML/main/block.html') as block_f:
-        block = block_f
+    with open('/var/www/Utils/HTML/main/block.html') as block_f:
+        block = block_f.read()
     return block
